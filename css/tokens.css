@@ -1,0 +1,54 @@
+/* ============================================================
+   DESIGN TOKENS — ND Design System v1.0
+   All colour, typography, and spacing variables live here.
+   Never hardcode hex values outside this file.
+   ============================================================ */
+
+:root {
+  /* Backgrounds — 4 depth levels */
+  --bg:   #0a0a0a;   /* Page background — deepest */
+  --bg2:  #111111;   /* Sidebar, cards, bubbles */
+  --bg3:  #1a1a1a;   /* Hover states, visitor bubbles */
+  --bg4:  #222222;   /* Avatars, input buttons */
+
+  /* Borders */
+  --border:  rgba(255, 255, 255, 0.08);
+  --border2: rgba(255, 255, 255, 0.13);
+
+  /* Text — 3 hierarchy levels */
+  --text:  #e8e6e0;   /* Primary */
+  --text2: #888580;   /* Secondary */
+  --text3: #555250;   /* Tertiary — metadata, labels */
+
+  /* Accent — amber gold (use sparingly) */
+  --accent:  #c9a96e;
+  --accent2: #8b6f42;
+
+  /* Status colours — always use foreground + tint (-t) together */
+  --green:   #4a7c59;
+  --green-t: #2a4a34;
+
+  --red:     #7c4a4a;
+  --red-t:   #4a2a2a;
+
+  --blue:    #4a6a8a;
+  --blue-t:  #2a3a4a;
+
+  --amber:   #8a6a2a;
+  --amber-t: #4a3a1a;
+
+  --teal:    #2a6a6a;
+  --teal-t:  #1a3a3a;
+
+  /* Typography */
+  --font-sans:  'Geist', sans-serif;
+  --font-mono:  'Geist Mono', monospace;
+  --font-serif: 'Instrument Serif', serif;
+
+  /* Border radius */
+  --radius:    8px;
+  --radius-lg: 12px;
+
+  /* Layout */
+  --sidebar-w: 260px;
+}

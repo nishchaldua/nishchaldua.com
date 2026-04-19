@@ -1,0 +1,37 @@
+/* ============================================================
+   RESPONSIVE — Single breakpoint at 700px for mobile.
+   No other breakpoints required.
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 52px;
+  }
+
+  /* Hide all text labels in the sidebar */
+  .nd-name,
+  .nd-role,
+  .sidebar-label,
+  .nav-item span,
+  .sidebar-footer span:last-child {
+    display: none;
+  }
+
+  /* Centre the nav dot when text is hidden */
+  .nav-item {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  /* Reduce chat area and input bar horizontal padding */
+  .chat-area,
+  .input-bar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Contact grid stacks to single column */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

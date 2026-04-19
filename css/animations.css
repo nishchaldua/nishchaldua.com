@@ -1,0 +1,16 @@
+/* ============================================================
+   ANIMATIONS — Only two animations exist in this codebase.
+   Do not add more.
+   ============================================================ */
+
+/* Status dot — communicates live availability */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* Tab switch — subtle fade + lift on content reveal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

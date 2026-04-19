@@ -1,0 +1,28 @@
+/* ============================================================
+   BASE — Reset, html/body defaults, scrollbar
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+/* Thin scrollbar — global */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg4) transparent;
+}
+
+*::-webkit-scrollbar       { width: 4px; }
+*::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }

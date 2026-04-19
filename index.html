@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nishchal Dua — GTM + AI</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Design system — load tokens first so variables are available -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ════════════════════════════════════
+       SIDEBAR
+       ════════════════════════════════════ -->
+  <div class="sidebar">
+
+    <div class="sidebar-header">
+      <div class="nd-brand">
+        <div class="nd-avatar">ND</div>
+        <div>
+          <div class="nd-name">Nishchal Dua</div>
+          <div class="nd-role">GTM + AI · Builder</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Explore</div>
+      <div class="nav-item active" data-tab="about">
+        <div class="nav-dot dot-green"></div>
+        <span>About me</span>
+      </div>
+      <div class="nav-item" data-tab="work">
+        <div class="nav-dot dot-blue"></div>
+        <span>Work &amp; results</span>
+      </div>
+      <div class="nav-item" data-tab="bets">
+        <div class="nav-dot dot-amber"></div>
+        <span>Bets I've placed</span>
+      </div>
+      <div class="nav-item" data-tab="gtm">
+        <div class="nav-dot dot-teal"></div>
+        <span>GTM + AI thinking</span>
+      </div>
+      <div class="nav-item" data-tab="building">
+        <div class="nav-dot dot-red"></div>
+        <span>What I'm building</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Connect</div>
+      <div class="nav-item" data-tab="contact">
+        <div class="nav-dot dot-accent"></div>
+        <span>Let's work together</span>
+      </div>
+    </div>
+
+    <div class="sidebar-footer" style="justify-content: flex-end;">
+      <span>v2026</span>
+    </div>
+
+  </div><!-- /sidebar -->
+
+  <!-- ════════════════════════════════════
+       MAIN
+       ════════════════════════════════════ -->
+  <div class="main">
+
+    <!-- Main header — updated by JS on tab switch -->
+    <div class="main-header">
+      <div class="main-header-left">
+        <div class="main-title" id="header-title">About me</div>
+        <div class="main-subtitle" id="header-sub">B2B SaaS Product &amp; Growth Marketing Leader | Educator and Entrepreneur</div>
+      </div>
+    </div>
+
+    <!-- Chat area — only this div scrolls -->
+    <div class="chat-area" id="chat-area">
+
+      <!-- ══════════════════════════════
+           TAB: ABOUT
+           ══════════════════════════════ -->
+      <div class="tab-content active" id="tab-about">
+
+        <!-- ND intro message -->
+        <div class="msg">
+          <div class="msg-avatar nd">ND</div>
+          <div class="msg-body">
+            <div class="msg-name nd-name-tag">Nishchal Dua · now</div>
+            <div class="msg-bubble">
+              Hey — I'm Nishchal. VP of Marketing at inFeedo.ai, and the person who's been building GTM systems with AI before most people knew what a prompt was.<br><br>
+              I've scaled companies from $0 to $7M ARR, driven $15M/year in pipeline, and built a team of 14. One company acquired. One company that failed. Both shaped everything about how I think and operate.<br><br>
+              I live at the intersection of three things: <strong>GTM strategy</strong>, <strong>AI-native workflows</strong>, and <strong>the operator's instinct</strong> that only comes from building under real pressure.
+              <div class="metric-row">
+                <span class="metric-pill">$15M pipeline / yr</span>
+                <span class="metric-pill">$0 → $7M ARR</span>
+                <span class="metric-pill">12+ yrs B2B SaaS</span>
+                <span class="metric-pill">1 exit · 1 failure</span>
+                <span class="metric-pill">Gurgaon, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visitor question -->
+        <div class="msg visitor">
+          <div class="msg-avatar vis">you</div>
+          <div class="msg-body">
+            <div class="msg-bubble">What kind of person are you, actually?</div>
+          </div>
+        </div>
+
+        <!-- ND response + chips -->
+        <div class="msg">
+          <div class="msg-avatar nd">ND</div>
+          <div class="msg-body">
+            <div class="msg-name nd-name-tag">Nishchal Dua · now</div>
+            <div class="msg-bubble">
+              Builder first. Strategist by necessity. Operator because nobody else was going to do it.<br><br>
+              I write category narratives and I'm also in HubSpot tagging accounts. I design GTM systems and I build the AI workflows that run them. My superpower is making complex things simple — in messaging, in architecture, in a room full of confused stakeholders.<br><br>
+              I believe the category story has to be right before you spend on demand gen. I believe AI isn't a tool, it's infrastructure. And I believe the only companies worth building are ones that work without you in 24 months.
+            </div>
+            <div class="chip-row">
+              <div class="chip" data-goto="work">See my work &amp; results →</div>
+              <div class="chip" data-goto="bets">The bets I've placed →</div>
+              <div class="chip" data-goto="gtm">My GTM + AI thinking →</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /tab-about -->
+
+      <!-- ══════════════════════════════
+           TAB: WORK & RESULTS
+           ══════════════════════════════ -->
+      <div class="tab-content" id="tab-work">
+
+        <div class="section-intro">Five chapters. Very different stages. Same operating system.</div>
+
+        <div class="cards-grid">
+
+          <!-- inFeedo.ai -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">inFeedo.ai — VP of Marketing</div>
+                <div class="card-meta">jan 2023 → present · ENT &amp; ultra-large GTM · ABM at scale</div>
+              </div>
+              <span class="badge badge-green">current</span>
+            </div>
+            <div class="card-body">
+              Scaled GTM for enterprise and ultra-large accounts using ABM, driving a pipeline of $15M/yr. Launched 2 new AI products and opened 1 new market in 18 months. Created 3 thought-leadership reports, recorded 25 podcasts generating 8,000+ downloads, and owned positioning, messaging, pricing &amp; packaging for 3 products across 2 segments.
+            </div>
+            <div class="card-metrics">
+              <span class="metric-pill">$15M pipeline / yr</span>
+              <span class="metric-pill">2 new AI products</span>
+              <span class="metric-pill">1 new market opened</span>
+              <span class="metric-pill">25 podcasts · 8K+ downloads</span>
+              <span class="metric-pill">3 products · 2 segments</span>
+            </div>
+          </div>
+
+          <!-- Airmeet -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Airmeet — Director of Marketing</div>
+                <div class="card-meta">apr 2020 → jan 2023 · joined as first marketer, pre-revenue</div>
+              </div>
+              <span class="badge badge-blue">scaled</span>
+            </div>
+            <div class="card-body">
+              Built the entire marketing function from zero. Championed Event-led Growth as a category before it had a name. Scaled a team of 14 growth, product, content &amp; creative marketers. Executed 4 product launches and owned product-marketing partnerships with HubSpot &amp; Prezi. Drove customer advocacy with 50+ case studies and 200+ G2 reviews in 12 months. Revamped onboarding &amp; sales enablement to improve activation and conversion rates.
+            </div>
+            <div class="card-metrics">
+              <span class="metric-pill">$0 → $7M ARR</span>
+              <span class="metric-pill">Team of 14 marketers</span>
+              <span class="metric-pill">4 product launches</span>
+              <span class="metric-pill">50+ case studies</span>
+              <span class="metric-pill">200+ G2 reviews · 12 months</span>
+              <span class="metric-pill">HubSpot &amp; Prezi partnerships</span>
+            </div>
+          </div>
+
+          <!-- Head of Growth Marketing — Fractional -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Head of Product &amp; Growth Marketing — Fractional</div>
+                <div class="card-meta">apr 2017 → apr 2020 · rainmaker · unicommerce · kaiterra + more</div>
+              </div>
+              <span class="badge badge-teal">advisory</span>
+            </div>
+            <div class="card-body">
+              Led 0→1 product marketing, GTM, growth &amp; sales enablement for multiple B2B tech/SaaS startups. Worked across different stages and verticals — from early-stage GTM strategy to market expansion and revenue growth.
+            </div>
+            <div class="card-metrics">
+              <span class="metric-pill">Rainmaker</span>
+              <span class="metric-pill">Unicommerce</span>
+              <span class="metric-pill">Kaiterra</span>
+            </div>
+          </div>
+
+          <!-- The Remote Life -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">The Remote Life — Founder</div>
+                <div class="card-meta">jan 2016 → apr 2020 · acquired by Airmeet</div>
+              </div>
+              <span class="badge badge-amber">acquired</span>
+            </div>
+            <div class="card-body">
+              Built and scaled the world's largest community &amp; conference dedicated to remote work — before remote work was mainstream. Expanded the product into memberships, content, courses &amp; certifications. Built a 110+ remote leader faculty network with 150+ hours of educational content and exited at 6-figure ARR.
+            </div>
+            <div class="card-metrics">
+              <span class="metric-pill">6-fig ARR at exit</span>
+              <span class="metric-pill">7,000+ active users</span>
+              <span class="metric-pill">110+ remote leaders</span>
+              <span class="metric-pill">150+ hrs of content</span>
+            </div>
+          </div>
+
+          <!-- Amadeus Labs -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Amadeus Labs — Product Marketing</div>
+                <div class="card-meta">jul 2014 → apr 2015 · b2b travel tech · first role</div>
+              </div>
+              <span class="badge badge-blue">first role</span>
+            </div>
+            <div class="card-body">
+              Launched multiple mobile &amp; web products for enterprise airline clients. Focused on customer research, GTM strategy, PMF validations, launch success &amp; post-launch support.
+            </div>
+            <div class="card-metrics">
+              <span class="metric-pill">Singapore Airlines</span>
+              <span class="metric-pill">Fiji Air</span>
+              <span class="metric-pill">Vistara</span>
+            </div>
+          </div>
+
+        </div><!-- /cards-grid -->
+
+        <div class="chip-row">
+          <div class="chip" data-goto="bets">How I think about these chapters →</div>
+          <div class="chip" data-goto="contact">Work with me →</div>
+        </div>
+
+      </div><!-- /tab-work -->
+
+      <!-- ══════════════════════════════
+           TAB: BETS I'VE PLACED
+           ══════════════════════════════ -->
+      <div class="tab-content" id="tab-bets">
+
+        <div class="msg">
+          <div class="msg-avatar nd">ND</div>
+          <div class="msg-body">
+            <div class="msg-name nd-name-tag">Nishchal Dua · on bets</div>
+            <div class="msg-bubble">
+              I think about my career as a series of bets. Some paid off. One didn't. I include the failure here because it taught me more than all the wins combined.<br><br>
+              Each bet had a thesis. A wager. An outcome. And a lesson that shaped the next one.
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- Bet 1: Amicus -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Amicus — bet on a market that didn't exist</div>
+                <div class="card-meta">~2015 · solo founder</div>
+              </div>
+              <span class="badge badge-red">failed</span>
+            </div>
+            <div class="card-body">
+              Built a product with conviction but without demand validation. The market wasn't ready. The signal wasn't real. Burned runway chasing a problem nobody was paying to solve.
+            </div>
+            <div class="card-lesson-label">lesson →</div>
+            <div class="card-lesson-text">Demand validation beats conviction. Every single time. My Playbook A filters — can a small buyer circle decide fast? will US customers pay $99–299/month? — are scar tissue from this failure made systematic.</div>
+          </div>
+
+          <!-- Bet 2: The Remote Life -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">The Remote Life — bet on a category before it had a name</div>
+                <div class="card-meta">2016–2020 · acquired by Airmeet</div>
+              </div>
+              <span class="badge badge-green">won</span>
+            </div>
+            <div class="card-body">
+              Built a community and conference around remote work in 2016, years before it became inevitable. Community + content as a moat. Distribution before product.
+            </div>
+            <div class="card-lesson-label">lesson →</div>
+            <div class="card-lesson-text">You can build globally from India. Distribution-first building works. The next company: bootstrapped, US/EU market, global from day one.</div>
+          </div>
+
+          <!-- Bet 3: Airmeet -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Airmeet — bet on Event-led Growth as a category play</div>
+                <div class="card-meta">2020–2023 · $0 → $7M ARR</div>
+              </div>
+              <span class="badge badge-blue">scaled</span>
+            </div>
+            <div class="card-body">
+              Joined pre-revenue, pre-product, and championed an entirely new go-to-market motion. Not just demand gen — a category creation play. ELG became a real thing in the market vocabulary.
+            </div>
+            <div class="card-lesson-label">lesson →</div>
+            <div class="card-lesson-text">Categories are built, not found. If the category story is fuzzy, demand gen becomes expensive coping.</div>
+          </div>
+
+          <!-- Bet 4: inFeedo.ai -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">inFeedo.ai — bet that AI + HR = the next enterprise category</div>
+                <div class="card-meta">2023 → present</div>
+              </div>
+              <span class="badge badge-amber">in play</span>
+            </div>
+            <div class="card-body">
+              Running ABM at scale, building AI workflows across the entire GTM motion, and positioning a bootstrapped company against VC-funded giants. The bet: that focused, AI-native operators beat bloated teams.
+            </div>
+            <div class="card-lesson-label">thesis →</div>
+            <div class="card-lesson-text">AI doesn't replace the GTM team. It makes one sharp operator worth five average ones.</div>
+          </div>
+
+        </div><!-- /cards-grid -->
+
+        <div class="chip-row">
+          <div class="chip" data-goto="building">What I'm betting on next →</div>
+          <div class="chip" data-goto="gtm">My GTM principles →</div>
+        </div>
+
+      </div><!-- /tab-bets -->
+
+      <!-- ══════════════════════════════
+           TAB: GTM + AI THINKING
+           ══════════════════════════════ -->
+      <div class="tab-content" id="tab-gtm">
+
+        <div class="msg">
+          <div class="msg-avatar nd">ND</div>
+          <div class="msg-body">
+            <div class="msg-name nd-name-tag">Nishchal Dua · on GTM + AI</div>
+            <div class="msg-bubble">
+              These aren't frameworks I read in a newsletter. They're the operating principles I've built, stress-tested, and rebuilt across three companies and 12+ years of B2B SaaS. Some are uncomfortable. All of them are true.
+            </div>
+          </div>
+        </div>
+
+        <!-- Framework: GTM principles -->
+        <div class="framework-block">
+          <div class="framework-header">
+            <span>GTM principles</span>
+            <span class="badge badge-teal">battle-tested</span>
+          </div>
+          <div class="framework-body">
+            <div class="principle">
+              <div class="principle-num">01</div>
+              <div class="principle-text"><strong>Category clarity or bust.</strong> If the category story is fuzzy, demand gen becomes expensive coping. Fix the narrative before you spend on distribution.</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">02</div>
+              <div class="principle-text"><strong>The 3Ds align everything.</strong> Dashboards, Definitions, Data. When every GTM function looks at the same data, uses the same language, and tracks the same dashboards — friction disappears.</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">03</div>
+              <div class="principle-text"><strong>Distribution before product.</strong> Map your channel before you build your feature. The best GTM systems answer the distribution question first.</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">04</div>
+              <div class="principle-text"><strong>Systems over heroics.</strong> If something repeats twice, turn it into a process. If it repeats ten times, automate it. The goal is a GTM engine that runs without you.</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">05</div>
+              <div class="principle-text"><strong>Instinct is the hypothesis. Data is the sales deck.</strong> Lead with your gut on customer truth. Validate with data. Never let the data replace the instinct.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Framework: AI in practice -->
+        <div class="framework-block">
+          <div class="framework-header">
+            <span>AI in practice — what I've actually built</span>
+            <span class="badge badge-blue">live at inFeedo.ai</span>
+          </div>
+          <div class="framework-body">
+            <div class="principle">
+              <div class="principle-num">→</div>
+              <div class="principle-text"><strong>AI-PMM Assistant</strong> — GTM brief generator, ABM campaign planner, messaging house embedded in Claude Projects</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">→</div>
+              <div class="principle-text"><strong>AI-SEO Engine</strong> — 75 blogs/quarter generated, QA'd, and published with native product USP insertion. Zero quality sacrifice.</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">→</div>
+              <div class="principle-text"><strong>SDR Intelligence Stack</strong> — Pre-call brief generator, email sequence writer, post-call follow-up automation across Apollo + Clay + HubSpot</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">→</div>
+              <div class="principle-text"><strong>Competitive Intel Agent</strong> — Real-time battlecard generation, win/loss pattern analysis, automated positioning updates</div>
+            </div>
+            <div class="principle">
+              <div class="principle-num">→</div>
+              <div class="principle-text"><strong>LinkedIn Growth System</strong> — Post generator trained on my voice, engagement tracker, content calendar automation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chip-row">
+          <div class="chip" data-goto="building">What I'm building next →</div>
+          <div class="chip" data-goto="contact">Talk GTM or AI →</div>
+        </div>
+
+      </div><!-- /tab-gtm -->
+
+      <!-- ══════════════════════════════
+           TAB: WHAT I'M BUILDING
+           ══════════════════════════════ -->
+      <div class="tab-content" id="tab-building">
+
+        <div class="msg">
+          <div class="msg-avatar nd">ND</div>
+          <div class="msg-body">
+            <div class="msg-name nd-name-tag">Nishchal Dua · on what's next</div>
+            <div class="msg-bubble">
+              I'm not announcing a company. I'm not launching a side hustle. I'm waiting for the right demand signal — because the failed company taught me that building ahead of demand is the most expensive mistake a founder makes.<br><br>
+              But I know exactly what the next bet looks like.
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- Card: Playbook A -->
+          <div class="card">
+            <div class="card-header">
+              <div><div class="card-title">The constraints are clear</div></div>
+              <span class="badge badge-amber">playbook A</span>
+            </div>
+            <div class="card-body">Every idea gets filtered through the same five questions before I take it seriously.</div>
+            <div class="card-list">
+              <div class="card-list-item">
+                <span class="list-marker">01</span>
+                Can a small buyer circle decide fast?
+              </div>
+              <div class="card-list-item">
+                <span class="list-marker">02</span>
+                Will US customers pay $99–$299/month?
+              </div>
+              <div class="card-list-item">
+                <span class="list-marker">03</span>
+                Can delivery be systematized with playbooks?
+              </div>
+              <div class="card-list-item">
+                <span class="list-marker">04</span>
+                Can it reach $2–5M ARR without massive headcount?
+              </div>
+              <div class="card-list-item">
+                <span class="list-marker">05</span>
+                Can I step away in 12–24 months?
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: The thesis -->
+          <div class="card">
+            <div class="card-header">
+              <div><div class="card-title">The thesis is set</div></div>
+              <span class="badge badge-teal">non-negotiables</span>
+            </div>
+            <div class="card-body">Three things I know about whatever I build next — before I know anything else about what it is.</div>
+            <div class="card-list" style="gap: 10px;">
+              <div class="thesis-item">
+                <div class="thesis-label">bootstrapped only</div>
+                <div class="thesis-desc">No VC. No investors. Complete ownership, no external accountability structures.</div>
+              </div>
+              <div class="divider"></div>
+              <div class="thesis-item">
+                <div class="thesis-label">global from day one</div>
+                <div class="thesis-desc">US/EU market. Not India-first. The Remote Life proved you can build globally from Gurgaon.</div>
+              </div>
+              <div class="divider"></div>
+              <div class="thesis-item">
+                <div class="thesis-label">AI-native by design</div>
+                <div class="thesis-desc">Not AI-enabled. Not AI-assisted. Built from the ground up assuming AI is the infrastructure.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: Building right now -->
+          <div class="card">
+            <div class="card-header">
+              <div><div class="card-title">Right now — building in public</div></div>
+              <span class="badge badge-blue">active</span>
+            </div>
+            <div class="card-body">While I wait for the signal, I'm building things that sharpen the instinct and keep the maker itch alive.</div>
+            <div class="card-list">
+              <div class="card-list-item">
+                <span class="list-marker teal">→</span>
+                LinkedIn + YouTube creator engine (GTM + AI content)
+              </div>
+              <div class="card-list-item">
+                <span class="list-marker teal">→</span>
+                AI workflow library for GTM teams
+              </div>
+              <div class="card-list-item">
+                <span class="list-marker teal">→</span>
+                Consulting + advisory for B2B SaaS GTM
+              </div>
+              <div class="card-list-item">
+                <span class="list-marker teal">→</span>
+                FIRE target: financially free by 40–45
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /cards-grid -->
+
+        <div class="chip-row">
+          <div class="chip" data-goto="contact">Talk about what's next →</div>
+          <div class="chip" data-goto="bets">See my full bet history →</div>
+        </div>
+
+      </div><!-- /tab-building -->
+
+      <!-- ══════════════════════════════
+           TAB: CONTACT
+           ══════════════════════════════ -->
+      <div class="tab-content" id="tab-contact">
+
+        <div class="msg">
+          <div class="msg-avatar nd">ND</div>
+          <div class="msg-body">
+            <div class="msg-name nd-name-tag">Nishchal Dua · on working together</div>
+            <div class="msg-bubble">
+              I'm open to the right conversations — career moves, advisory, GTM consulting, or just a sharp exchange of ideas. Hard floor on comp, high bar on quality. If you think there's a fit, reach out directly. I respond to people who've done their homework.<br><br>
+              Best way in: LinkedIn. Fastest way to not hear back: a generic cold message with no context.
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+
+          <a class="contact-link" href="https://linkedin.com/in/nishchaldua" target="_blank" rel="noopener">
+            <div class="contact-icon">in</div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-sub">linkedin.com/in/nishchaldua</div>
+            </div>
+          </a>
+
+          <a class="contact-link" href="mailto:nishchaldua@gmail.com">
+            <div class="contact-icon">@</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-sub">nishchaldua@gmail.com</div>
+            </div>
+          </a>
+
+          <a class="contact-link" href="https://twitter.com/NishchalDua" target="_blank" rel="noopener">
+            <div class="contact-icon">𝕏</div>
+            <div>
+              <div class="contact-label">Twitter / X</div>
+              <div class="contact-sub">@NishchalDua</div>
+            </div>
+          </a>
+
+          <div class="contact-link" style="cursor: default;">
+            <div class="contact-icon" style="font-size: 9px; font-family: var(--font-mono);">GX</div>
+            <div>
+              <div class="contact-label">GrowthX</div>
+              <div class="contact-sub">Program Director · ELG + AI</div>
+            </div>
+          </div>
+
+        </div><!-- /contact-grid -->
+
+        <!-- What I'm open to -->
+        <div class="card">
+          <div class="card-title" style="margin-bottom: 14px;">What I'm open to</div>
+          <div class="card-list">
+            <div class="card-list-item">
+              <span class="list-marker">→</span>
+              CMO / SVP / VP roles at scaled B2B SaaS companies (comp floor: ₹1.2Cr+)
+            </div>
+            <div class="card-list-item">
+              <span class="list-marker">→</span>
+              GTM advisory or fractional work for early-to-mid stage B2B SaaS
+            </div>
+            <div class="card-list-item">
+              <span class="list-marker">→</span>
+              Speaking, workshops, and masterclasses on GTM strategy + AI workflows
+            </div>
+            <div class="card-list-item">
+              <span class="list-marker">→</span>
+              Founder conversations — especially if you're building in GTM-tech or AI-native SaaS
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /tab-contact -->
+
+    </div><!-- /chat-area -->
+
+    <!-- Decorative input bar — non-functional by design -->
+    <div class="input-bar">
+      <div class="input-wrap">
+        <div class="input-placeholder">Ask me anything — career, GTM, AI, what I'm building next...</div>
+        <div class="input-actions">
+          <div class="input-hint">↵ return</div>
+          <div class="send-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round" style="color: var(--text3);">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+
+</div><!-- /shell -->
+
+<script src="js/app.js"></script>
+</body>
+</html>
