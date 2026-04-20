@@ -1,0 +1,125 @@
+/* ============================================================
+   LIGHT THEME — Token overrides + component adjustments
+   Applied when <html data-theme="light">
+
+   Palette philosophy: warm cream/parchment surface (not cold
+   white) so the amber accent still feels at home. Text goes
+   near-black with warm undertones to match the surface.
+   ============================================================ */
+
+[data-theme="light"] {
+  /* Backgrounds — 4 depth levels (light → slightly warmer) */
+  --bg:   #f8f5f0;   /* Page background */
+  --bg2:  #f0ece5;   /* Sidebar, cards, bubbles */
+  --bg3:  #e7e1d8;   /* Hover states, visitor bubbles */
+  --bg4:  #ddd6cb;   /* Avatars, input buttons */
+
+  /* Borders */
+  --border:  rgba(0, 0, 0, 0.09);
+  --border2: rgba(0, 0, 0, 0.16);
+
+  /* Text — 3 hierarchy levels */
+  --text:  #1c1814;   /* Primary — near-black, warm tinted */
+  --text2: #5a524a;   /* Secondary — warm mid-gray */
+  --text3: #9a9188;   /* Tertiary — metadata, labels */
+
+  /* Accent — slightly deeper amber for contrast on light bg */
+  --accent:  #a07030;
+  --accent2: #7a5828;
+
+  /* Status colours — light tint backgrounds, dark foregrounds */
+  --green:   #1c6b33;
+  --green-t: #d4edd9;
+
+  --red:     #8b2424;
+  --red-t:   #f2d5d5;
+
+  --blue:    #1a4870;
+  --blue-t:  #cce0f0;
+
+  --amber:   #7a4e10;
+  --amber-t: #f0e0c4;
+
+  --teal:    #0a5252;
+  --teal-t:  #c4e4e4;
+}
+
+/* ── Badge text colours — darker for light bg contrast ── */
+[data-theme="light"] .badge-green { color: #1c6b33; }
+[data-theme="light"] .badge-red   { color: #8b2424; }
+[data-theme="light"] .badge-blue  { color: #1a4870; }
+[data-theme="light"] .badge-amber { color: #7a4e10; }
+[data-theme="light"] .badge-teal  { color: #0a5252; }
+
+/* ── Nav dot colours — keep same saturation but slightly
+   richer so they read well on the lighter sidebar ── */
+[data-theme="light"] .dot-green  { background: #2a8a48; }
+[data-theme="light"] .dot-blue   { background: #2a5e96; }
+[data-theme="light"] .dot-amber  { background: #b88820; }
+[data-theme="light"] .dot-teal   { background: #1a8888; }
+[data-theme="light"] .dot-red    { background: #b03030; }
+[data-theme="light"] .dot-accent { background: var(--accent); }
+
+/* ── Theme toggle icon visibility ── */
+/* Default (dark): show moon, hide sun */
+.icon-sun  { display: none; }
+.icon-moon { display: block; }
+
+[data-theme="light"] .icon-moon { display: none; }
+[data-theme="light"] .icon-sun  { display: block; }
+
+/* ── Smooth theme transition ──
+   Applied to all surfaces so the switch feels intentional.
+   Hover transitions (0.15s) still win since they're shorter. */
+body,
+.sidebar,
+.sidebar-header,
+.sidebar-footer,
+.main,
+.main-header,
+.chat-area,
+.input-bar,
+.input-wrap,
+.input-hint,
+.send-btn,
+.nav-item,
+.nd-avatar,
+.msg-avatar,
+.msg-bubble,
+.metric-pill,
+.chip,
+.card,
+.card-body,
+.card-title,
+.card-meta,
+.badge,
+.section-intro,
+.framework-block,
+.framework-header,
+.framework-body,
+.principle,
+.principle-num,
+.principle-text,
+.contact-link,
+.contact-icon,
+.contact-label,
+.contact-sub,
+.divider,
+.theme-toggle,
+.main-title,
+.main-subtitle,
+.nd-name,
+.nd-role,
+.sidebar-label,
+.msg-name,
+.thesis-label,
+.thesis-desc,
+.card-lesson-label,
+.card-lesson-text,
+.card-list-item,
+.list-marker,
+.input-placeholder {
+  transition: background-color 0.25s ease,
+              border-color     0.25s ease,
+              color            0.25s ease;
+}

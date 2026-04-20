@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
+  <!-- Anti-FOUC: set theme before any CSS renders -->
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('nd-theme') || 'light');</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nishchal Dua — GTM + AI</title>
@@ -17,8 +20,27 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/light-theme.css">
+  <link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
+
+<div id="nd-loader" aria-hidden="true" role="presentation">
+  <div class="loader-avatar">ND</div>
+  <div class="loader-bubble">
+    <div class="loader-rows">
+      <div class="loader-row"></div>
+      <div class="loader-row"></div>
+      <div class="loader-row"></div>
+    </div>
+    <div class="loader-phase">processing &middot; cross-referencing &middot; synthesising...</div>
+  </div>
+  <div class="loader-reveal">GTM + AI. Builder. Operator.</div>
+  <div class="loader-bottom">
+    <div class="loader-cursor"></div>
+    <span class="loader-domain">nishchaldua.com</span>
+  </div>
+</div>
 
 <div class="shell">
 
@@ -47,17 +69,13 @@
         <div class="nav-dot dot-blue"></div>
         <span>Work &amp; results</span>
       </div>
-      <div class="nav-item" data-tab="bets">
-        <div class="nav-dot dot-amber"></div>
-        <span>Bets I've placed</span>
-      </div>
       <div class="nav-item" data-tab="gtm">
         <div class="nav-dot dot-teal"></div>
         <span>GTM + AI thinking</span>
       </div>
-      <div class="nav-item" data-tab="building">
-        <div class="nav-dot dot-red"></div>
-        <span>What I'm building</span>
+      <div class="nav-item" data-tab="library">
+        <div class="nav-dot dot-purple"></div>
+        <span>Library</span>
       </div>
     </div>
 
@@ -86,6 +104,25 @@
         <div class="main-title" id="header-title">About me</div>
         <div class="main-subtitle" id="header-sub">B2B SaaS Product &amp; Growth Marketing Leader | Educator and Entrepreneur</div>
       </div>
+      <!-- Theme toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+        <!-- Moon — visible in dark mode -->
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <!-- Sun — visible in light mode -->
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1"     x2="12" y2="3"></line>
+          <line x1="12" y1="21"    x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22"   x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1"  y1="12" x2="3"  y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78"  x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
     </div>
 
     <!-- Chat area — only this div scrolls -->
@@ -136,7 +173,6 @@
             </div>
             <div class="chip-row">
               <div class="chip" data-goto="work">See my work &amp; results →</div>
-              <div class="chip" data-goto="bets">The bets I've placed →</div>
               <div class="chip" data-goto="gtm">My GTM + AI thinking →</div>
             </div>
           </div>
@@ -257,102 +293,10 @@
         </div><!-- /cards-grid -->
 
         <div class="chip-row">
-          <div class="chip" data-goto="bets">How I think about these chapters →</div>
           <div class="chip" data-goto="contact">Work with me →</div>
         </div>
 
       </div><!-- /tab-work -->
-
-      <!-- ══════════════════════════════
-           TAB: BETS I'VE PLACED
-           ══════════════════════════════ -->
-      <div class="tab-content" id="tab-bets">
-
-        <div class="msg">
-          <div class="msg-avatar nd">ND</div>
-          <div class="msg-body">
-            <div class="msg-name nd-name-tag">Nishchal Dua · on bets</div>
-            <div class="msg-bubble">
-              I think about my career as a series of bets. Some paid off. One didn't. I include the failure here because it taught me more than all the wins combined.<br><br>
-              Each bet had a thesis. A wager. An outcome. And a lesson that shaped the next one.
-            </div>
-          </div>
-        </div>
-
-        <div class="cards-grid">
-
-          <!-- Bet 1: Amicus -->
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Amicus — bet on a market that didn't exist</div>
-                <div class="card-meta">~2015 · solo founder</div>
-              </div>
-              <span class="badge badge-red">failed</span>
-            </div>
-            <div class="card-body">
-              Built a product with conviction but without demand validation. The market wasn't ready. The signal wasn't real. Burned runway chasing a problem nobody was paying to solve.
-            </div>
-            <div class="card-lesson-label">lesson →</div>
-            <div class="card-lesson-text">Demand validation beats conviction. Every single time. My Playbook A filters — can a small buyer circle decide fast? will US customers pay $99–299/month? — are scar tissue from this failure made systematic.</div>
-          </div>
-
-          <!-- Bet 2: The Remote Life -->
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">The Remote Life — bet on a category before it had a name</div>
-                <div class="card-meta">2016–2020 · acquired by Airmeet</div>
-              </div>
-              <span class="badge badge-green">won</span>
-            </div>
-            <div class="card-body">
-              Built a community and conference around remote work in 2016, years before it became inevitable. Community + content as a moat. Distribution before product.
-            </div>
-            <div class="card-lesson-label">lesson →</div>
-            <div class="card-lesson-text">You can build globally from India. Distribution-first building works. The next company: bootstrapped, US/EU market, global from day one.</div>
-          </div>
-
-          <!-- Bet 3: Airmeet -->
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Airmeet — bet on Event-led Growth as a category play</div>
-                <div class="card-meta">2020–2023 · $0 → $7M ARR</div>
-              </div>
-              <span class="badge badge-blue">scaled</span>
-            </div>
-            <div class="card-body">
-              Joined pre-revenue, pre-product, and championed an entirely new go-to-market motion. Not just demand gen — a category creation play. ELG became a real thing in the market vocabulary.
-            </div>
-            <div class="card-lesson-label">lesson →</div>
-            <div class="card-lesson-text">Categories are built, not found. If the category story is fuzzy, demand gen becomes expensive coping.</div>
-          </div>
-
-          <!-- Bet 4: inFeedo.ai -->
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">inFeedo.ai — bet that AI + HR = the next enterprise category</div>
-                <div class="card-meta">2023 → present</div>
-              </div>
-              <span class="badge badge-amber">in play</span>
-            </div>
-            <div class="card-body">
-              Running ABM at scale, building AI workflows across the entire GTM motion, and positioning a bootstrapped company against VC-funded giants. The bet: that focused, AI-native operators beat bloated teams.
-            </div>
-            <div class="card-lesson-label">thesis →</div>
-            <div class="card-lesson-text">AI doesn't replace the GTM team. It makes one sharp operator worth five average ones.</div>
-          </div>
-
-        </div><!-- /cards-grid -->
-
-        <div class="chip-row">
-          <div class="chip" data-goto="building">What I'm betting on next →</div>
-          <div class="chip" data-goto="gtm">My GTM principles →</div>
-        </div>
-
-      </div><!-- /tab-bets -->
 
       <!-- ══════════════════════════════
            TAB: GTM + AI THINKING
@@ -430,121 +374,10 @@
         </div>
 
         <div class="chip-row">
-          <div class="chip" data-goto="building">What I'm building next →</div>
           <div class="chip" data-goto="contact">Talk GTM or AI →</div>
         </div>
 
       </div><!-- /tab-gtm -->
-
-      <!-- ══════════════════════════════
-           TAB: WHAT I'M BUILDING
-           ══════════════════════════════ -->
-      <div class="tab-content" id="tab-building">
-
-        <div class="msg">
-          <div class="msg-avatar nd">ND</div>
-          <div class="msg-body">
-            <div class="msg-name nd-name-tag">Nishchal Dua · on what's next</div>
-            <div class="msg-bubble">
-              I'm not announcing a company. I'm not launching a side hustle. I'm waiting for the right demand signal — because the failed company taught me that building ahead of demand is the most expensive mistake a founder makes.<br><br>
-              But I know exactly what the next bet looks like.
-            </div>
-          </div>
-        </div>
-
-        <div class="cards-grid">
-
-          <!-- Card: Playbook A -->
-          <div class="card">
-            <div class="card-header">
-              <div><div class="card-title">The constraints are clear</div></div>
-              <span class="badge badge-amber">playbook A</span>
-            </div>
-            <div class="card-body">Every idea gets filtered through the same five questions before I take it seriously.</div>
-            <div class="card-list">
-              <div class="card-list-item">
-                <span class="list-marker">01</span>
-                Can a small buyer circle decide fast?
-              </div>
-              <div class="card-list-item">
-                <span class="list-marker">02</span>
-                Will US customers pay $99–$299/month?
-              </div>
-              <div class="card-list-item">
-                <span class="list-marker">03</span>
-                Can delivery be systematized with playbooks?
-              </div>
-              <div class="card-list-item">
-                <span class="list-marker">04</span>
-                Can it reach $2–5M ARR without massive headcount?
-              </div>
-              <div class="card-list-item">
-                <span class="list-marker">05</span>
-                Can I step away in 12–24 months?
-              </div>
-            </div>
-          </div>
-
-          <!-- Card: The thesis -->
-          <div class="card">
-            <div class="card-header">
-              <div><div class="card-title">The thesis is set</div></div>
-              <span class="badge badge-teal">non-negotiables</span>
-            </div>
-            <div class="card-body">Three things I know about whatever I build next — before I know anything else about what it is.</div>
-            <div class="card-list" style="gap: 10px;">
-              <div class="thesis-item">
-                <div class="thesis-label">bootstrapped only</div>
-                <div class="thesis-desc">No VC. No investors. Complete ownership, no external accountability structures.</div>
-              </div>
-              <div class="divider"></div>
-              <div class="thesis-item">
-                <div class="thesis-label">global from day one</div>
-                <div class="thesis-desc">US/EU market. Not India-first. The Remote Life proved you can build globally from Gurgaon.</div>
-              </div>
-              <div class="divider"></div>
-              <div class="thesis-item">
-                <div class="thesis-label">AI-native by design</div>
-                <div class="thesis-desc">Not AI-enabled. Not AI-assisted. Built from the ground up assuming AI is the infrastructure.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card: Building right now -->
-          <div class="card">
-            <div class="card-header">
-              <div><div class="card-title">Right now — building in public</div></div>
-              <span class="badge badge-blue">active</span>
-            </div>
-            <div class="card-body">While I wait for the signal, I'm building things that sharpen the instinct and keep the maker itch alive.</div>
-            <div class="card-list">
-              <div class="card-list-item">
-                <span class="list-marker teal">→</span>
-                LinkedIn + YouTube creator engine (GTM + AI content)
-              </div>
-              <div class="card-list-item">
-                <span class="list-marker teal">→</span>
-                AI workflow library for GTM teams
-              </div>
-              <div class="card-list-item">
-                <span class="list-marker teal">→</span>
-                Consulting + advisory for B2B SaaS GTM
-              </div>
-              <div class="card-list-item">
-                <span class="list-marker teal">→</span>
-                FIRE target: financially free by 40–45
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /cards-grid -->
-
-        <div class="chip-row">
-          <div class="chip" data-goto="contact">Talk about what's next →</div>
-          <div class="chip" data-goto="bets">See my full bet history →</div>
-        </div>
-
-      </div><!-- /tab-building -->
 
       <!-- ══════════════════════════════
            TAB: CONTACT
@@ -623,29 +456,826 @@
 
       </div><!-- /tab-contact -->
 
+      <!-- ══════════════════════════════
+           TAB: LIBRARY
+           ══════════════════════════════ -->
+      <div class="tab-content" id="tab-library">
+
+        <div class="section-intro">Books are how I compress other people's decades into a weekend. These are the ones that changed something.</div>
+
+        <!-- Stats row -->
+        <div class="metric-row">
+          <span class="metric-pill">123 books in the library</span>
+          <span class="metric-pill">26 best reads ★</span>
+          <span class="metric-pill">9 categories</span>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="filter-row">
+          <div class="filter-pill active" data-filter="all" onclick="filterBooks('all')">All</div>
+          <div class="filter-pill" data-filter="best" onclick="filterBooks('best')">★ Best reads</div>
+          <div class="filter-pill" data-filter="Fantasy &amp; Fiction" onclick="filterBooks('Fantasy &amp; Fiction')">Fantasy &amp; Fiction</div>
+          <div class="filter-pill" data-filter="Literary Classics" onclick="filterBooks('Literary Classics')">Literary Classics</div>
+          <div class="filter-pill" data-filter="Mystery &amp; Thriller" onclick="filterBooks('Mystery &amp; Thriller')">Mystery &amp; Thriller</div>
+          <div class="filter-pill" data-filter="Romance &amp; Contemporary Fiction" onclick="filterBooks('Romance &amp; Contemporary Fiction')">Romance &amp; Contemporary Fiction</div>
+          <div class="filter-pill" data-filter="Marketing &amp; Sales" onclick="filterBooks('Marketing &amp; Sales')">Marketing &amp; Sales</div>
+          <div class="filter-pill" data-filter="Startups &amp; Business" onclick="filterBooks('Startups &amp; Business')">Startups &amp; Business</div>
+          <div class="filter-pill" data-filter="Psychology &amp; Self-Help" onclick="filterBooks('Psychology &amp; Self-Help')">Psychology &amp; Self-Help</div>
+          <div class="filter-pill" data-filter="Indian History &amp; Culture" onclick="filterBooks('Indian History &amp; Culture')">Indian History &amp; Culture</div>
+          <div class="filter-pill" data-filter="Science" onclick="filterBooks('Science')">Science</div>
+        </div>
+
+        <!-- Spine grid — 123 books -->
+        <div class="spine-grid">
+
+          <!-- 0 · Fantasy & Fiction -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Philosopher's Stone" data-author="J.K. Rowling" data-summary="The story that started it all — Harry discovers he&apos;s a wizard and enters a world of magic, friendship, and wonder at Hogwarts." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">Harry Potter and the Philosopher&apos;s Stone</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 1 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Chamber of Secrets" data-author="J.K. Rowling" data-summary="Harry&apos;s second year brings a dark monster lurking in the walls of Hogwarts and a mystery tied to the school&apos;s forgotten history." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Harry Potter and the Chamber of Secrets</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 2 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Prisoner of Azkaban" data-author="J.K. Rowling" data-summary="A dangerous prisoner escapes from the wizarding world&apos;s most secure prison — and he&apos;s coming for Harry." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Harry Potter and the Prisoner of Azkaban</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 3 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Goblet of Fire" data-author="J.K. Rowling" data-summary="Harry is thrust into the deadly Triwizard Tournament and comes face to face with Voldemort for the first time." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Harry Potter and the Goblet of Fire</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 4 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Order of the Phoenix" data-author="J.K. Rowling" data-summary="Harry fights on two fronts — Voldemort&apos;s rising forces and a Ministry of Magic determined to deny the truth." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">Harry Potter and the Order of the Phoenix</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 5 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Half-Blood Prince" data-author="J.K. Rowling" data-summary="Dark revelations about Voldemort&apos;s past and a shocking betrayal set the stage for the final battle." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">Harry Potter and the Half-Blood Prince</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 6 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Deathly Hallows" data-author="J.K. Rowling" data-summary="Harry, Ron, and Hermione embark on a final desperate mission to destroy Voldemort&apos;s Horcruxes and end the war." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">Harry Potter and the Deathly Hallows</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 7 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Harry Potter and the Cursed Child" data-author="J.K. Rowling" data-summary="A stage play following Harry&apos;s son Albus at Hogwarts and the dangerous consequences of meddling with time." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">Harry Potter and the Cursed Child</span></div>
+            <div class="spine-author">Rowling</div>
+          </div>
+
+          <!-- 8 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="The Hunger Games" data-author="Suzanne Collins" data-summary="A dystopian survival story where teenagers fight to the death as entertainment — and one girl sparks a revolution." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">The Hunger Games</span></div>
+            <div class="spine-author">Collins</div>
+          </div>
+
+          <!-- 9 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Catching Fire" data-author="Suzanne Collins" data-summary="Katniss becomes a reluctant symbol of rebellion as the Capitol tightens its grip and the stakes become catastrophic." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Catching Fire</span></div>
+            <div class="spine-author">Collins</div>
+          </div>
+
+          <!-- 10 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Mockingjay" data-author="Suzanne Collins" data-summary="The revolution reaches its brutal conclusion as Katniss leads the fight against the Capitol at enormous personal cost." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Mockingjay</span></div>
+            <div class="spine-author">Collins</div>
+          </div>
+
+          <!-- 11 ★ -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="true" data-title="The Fellowship of the Ring" data-author="J.R.R. Tolkien" data-summary="The one that invented modern fantasy. Tolkien built an entire world so complete it made every fantasy writer who came after feel like they were working in his shadow." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="best-star">★</span><span class="spine-title">The Fellowship of the Ring</span></div>
+            <div class="spine-author">Tolkien</div>
+          </div>
+
+          <!-- 12 ★ -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="true" data-title="The Two Towers" data-author="J.R.R. Tolkien" data-summary="Tolkien&apos;s magnum opus continues — the fellowship is broken, and three separate quests unfold across Middle-earth as the war for the One Ring escalates." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="best-star">★</span><span class="spine-title">The Two Towers</span></div>
+            <div class="spine-author">Tolkien</div>
+          </div>
+
+          <!-- 13 ★ -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="true" data-title="The Return of the King" data-author="J.R.R. Tolkien" data-summary="The epic conclusion — the fate of Middle-earth rests on the courage of two hobbits and the armies of men at the gates of Mordor." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="best-star">★</span><span class="spine-title">The Return of the King</span></div>
+            <div class="spine-author">Tolkien</div>
+          </div>
+
+          <!-- 14 ★ -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="true" data-title="The Immortals of Meluha" data-author="Amish Tripathi" data-summary="Amish reimagines Shiva as a human leader ascending to legend. Part mythology, part strategy, part nation-building. The Shiva Trilogy is the best Indian fiction I&apos;ve read." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="best-star">★</span><span class="spine-title">The Immortals of Meluha</span></div>
+            <div class="spine-author">Tripathi</div>
+          </div>
+
+          <!-- 15 ★ -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="true" data-title="The Secret of the Nagas" data-author="Amish Tripathi" data-summary="Amish Tripathi&apos;s reimagining of Shiva as a mortal man who becomes a god through choices and courage — the trilogy&apos;s darkest and most complex chapter." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="best-star">★</span><span class="spine-title">The Secret of the Nagas</span></div>
+            <div class="spine-author">Tripathi</div>
+          </div>
+
+          <!-- 16 ★ -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="true" data-title="The Oath of the Vayuputras" data-author="Amish Tripathi" data-summary="The final chapter of Shiva&apos;s journey — the truth about evil and the enormous sacrifice it demands to protect what matters." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="best-star">★</span><span class="spine-title">The Oath of the Vayuputras</span></div>
+            <div class="spine-author">Tripathi</div>
+          </div>
+
+          <!-- 17 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Treasure Island" data-author="Robert Louis Stevenson" data-summary="The definitive pirate adventure — buried treasure, a duplicitous crew, and a boy&apos;s coming of age on the high seas." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Treasure Island</span></div>
+            <div class="spine-author">Stevenson</div>
+          </div>
+
+          <!-- 18 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Arabian Nights" data-author="Various" data-summary="One of the great storytelling collections of the world — a frame narrative containing hundreds of tales from across the Middle East and South Asia." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Arabian Nights</span></div>
+            <div class="spine-author">Various</div>
+          </div>
+
+          <!-- 19 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Stories of Sheikh Chilli" data-author="Various" data-summary="Classic Indian folk tales of a lovable dreamer whose grand plans always spectacularly unravel — funny, wise, and timeless." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Stories of Sheikh Chilli</span></div>
+            <div class="spine-author">Various</div>
+          </div>
+
+          <!-- 20 ★ -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="true" data-title="The Alchemist" data-author="Paulo Coelho" data-summary="The one everyone should read at 20 and again at 40. The story of following a dream is easy to dismiss; the wisdom underneath it is not." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="best-star">★</span><span class="spine-title">The Alchemist</span></div>
+            <div class="spine-author">Coelho</div>
+          </div>
+
+          <!-- 21 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="Peter Ustinov — The Novels and Stories" data-author="Peter Ustinov" data-summary="Witty, sharp fiction from one of the great polymaths of 20th-century entertainment — as clever on the page as he was on stage." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">Peter Ustinov — The Novels and Stories</span></div>
+            <div class="spine-author">Ustinov</div>
+          </div>
+
+          <!-- 22 -->
+          <div class="spine-card" data-category="Fantasy &amp; Fiction" data-best="false" data-title="John Grisham Collection of Novels" data-author="John Grisham" data-summary="Grisham&apos;s legal thrillers — gripping courtroom dramas that make you question justice, power, and the law." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">John Grisham Collection of Novels</span></div>
+            <div class="spine-author">Grisham</div>
+          </div>
+
+          <!-- 23 · Literary Classics -->
+          <div class="spine-card" data-category="Literary Classics" data-best="false" data-title="Pride and Prejudice" data-author="Jane Austen" data-summary="Austen&apos;s sharp dissection of marriage, class, and the battle between pride and first impressions — still the gold standard of the romantic novel." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">Pride and Prejudice</span></div>
+            <div class="spine-author">Austen</div>
+          </div>
+
+          <!-- 24 -->
+          <div class="spine-card" data-category="Literary Classics" data-best="false" data-title="Emma" data-author="Jane Austen" data-summary="A brilliant but misguided matchmaker learns that meddling in others&apos; love lives reveals more about your own blind spots than theirs." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">Emma</span></div>
+            <div class="spine-author">Austen</div>
+          </div>
+
+          <!-- 25 -->
+          <div class="spine-card" data-category="Literary Classics" data-best="false" data-title="A Tale of Two Cities" data-author="Charles Dickens" data-summary="Dickens&apos; sweeping story of love, sacrifice, and revolution — it is the best of times, it is the worst of times." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">A Tale of Two Cities</span></div>
+            <div class="spine-author">Dickens</div>
+          </div>
+
+          <!-- 26 -->
+          <div class="spine-card" data-category="Literary Classics" data-best="false" data-title="To Kill a Mockingbird" data-author="Harper Lee" data-summary="A child&apos;s view of racial injustice in the American South — still one of the most important and morally clear novels ever written." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">To Kill a Mockingbird</span></div>
+            <div class="spine-author">Lee</div>
+          </div>
+
+          <!-- 27 ★ -->
+          <div class="spine-card" data-category="Literary Classics" data-best="true" data-title="1984" data-author="George Orwell" data-summary="Orwell&apos;s warning about power, surveillance, and the rewriting of truth has only grown more relevant. Still the best book on what happens when institutions stop being accountable." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="best-star">★</span><span class="spine-title">1984</span></div>
+            <div class="spine-author">Orwell</div>
+          </div>
+
+          <!-- 28 ★ -->
+          <div class="spine-card" data-category="Literary Classics" data-best="true" data-title="Don Quixote" data-author="Cervantes" data-summary="The first modern novel, written in 1605, still funnier and more human than most books published today. A reminder that good ideas don&apos;t expire." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="best-star">★</span><span class="spine-title">Don Quixote</span></div>
+            <div class="spine-author">Cervantes</div>
+          </div>
+
+          <!-- 29 -->
+          <div class="spine-card" data-category="Literary Classics" data-best="false" data-title="The Diary of Anne Frank" data-author="Anne Frank" data-summary="Anne Frank&apos;s journal from two years in hiding during the Nazi occupation — one of the most important documents of human dignity under terror." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">The Diary of Anne Frank</span></div>
+            <div class="spine-author">Frank</div>
+          </div>
+
+          <!-- 30 -->
+          <div class="spine-card" data-category="Literary Classics" data-best="false" data-title="The Memoirs of Sherlock Holmes" data-author="Arthur Conan Doyle" data-summary="Doyle&apos;s brilliant detective at his most inventive — eight stories of deduction, mystery, and Victorian intrigue, including the apparent death at Reichenbach Falls." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">The Memoirs of Sherlock Holmes</span></div>
+            <div class="spine-author">Doyle</div>
+          </div>
+
+          <!-- 31 ★ -->
+          <div class="spine-card" data-category="Literary Classics" data-best="true" data-title="The Hitchhiker's Guide to the Galaxy" data-author="Douglas Adams" data-summary="The only book that made me laugh out loud alone. Also happens to contain more actual philosophy per page than most philosophy books." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="best-star">★</span><span class="spine-title">The Hitchhiker&apos;s Guide to the Galaxy</span></div>
+            <div class="spine-author">Adams</div>
+          </div>
+
+          <!-- 32 -->
+          <div class="spine-card" data-category="Literary Classics" data-best="false" data-title="Life of Pi" data-author="Yann Martel" data-summary="A boy, a lifeboat, a Bengal tiger, and an ocean — a story about survival, storytelling, and the nature of belief." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">Life of Pi</span></div>
+            <div class="spine-author">Martel</div>
+          </div>
+
+          <!-- 33 · Mystery & Thriller -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Silent Patient" data-author="Alex Michaelides" data-summary="A famous painter shoots her husband then never speaks again — a psychological thriller with a twist that reframes everything you thought you knew." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">The Silent Patient</span></div>
+            <div class="spine-author">Michaelides</div>
+          </div>
+
+          <!-- 34 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Icon" data-author="Frederick Forsyth" data-summary="Forsyth&apos;s Cold War thriller about a plot to restore fascism in Russia — told with his trademark precision and deep research." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Icon</span></div>
+            <div class="spine-author">Forsyth</div>
+          </div>
+
+          <!-- 35 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Code to Zero" data-author="Ken Follett" data-summary="A spy wakes with no memory in 1958 Washington and slowly uncovers a Cold War conspiracy he may himself have started." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Code to Zero</span></div>
+            <div class="spine-author">Follett</div>
+          </div>
+
+          <!-- 36 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Angels and Demons" data-author="Dan Brown" data-summary="A Harvard symbolist races to stop a secret society from destroying the Vatican using stolen antimatter — Brown&apos;s most propulsive thriller." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">Angels and Demons</span></div>
+            <div class="spine-author">Brown</div>
+          </div>
+
+          <!-- 37 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Wild Justice" data-author="Wilbur Smith" data-summary="A thriller of vengeance, wealth, and African adventure — Wilbur Smith at his most propulsive." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">Wild Justice</span></div>
+            <div class="spine-author">Smith</div>
+          </div>
+
+          <!-- 38 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Nancy Drew Files — Never Say Die" data-author="Carolyn Keene" data-summary="Nancy Drew goes undercover at a ski resort to investigate a series of suspicious and increasingly dangerous accidents." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">The Nancy Drew Files — Never Say Die</span></div>
+            <div class="spine-author">Keene</div>
+          </div>
+
+          <!-- 39 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Investigators: The Mystery of the Moaning Cave" data-author="Arden" data-summary="Three investigators tackle a mystery involving a supposedly haunted cave — a classic adventure in the Three Investigators series." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">Investigators: The Mystery of the Moaning Cave</span></div>
+            <div class="spine-author">Arden</div>
+          </div>
+
+          <!-- 40 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Bourne Supremacy" data-author="Robert Ludlum" data-summary="Jason Bourne is drawn back into espionage when an imposter using his identity commits a murder — Ludlum&apos;s most relentless thriller." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">The Bourne Supremacy</span></div>
+            <div class="spine-author">Ludlum</div>
+          </div>
+
+          <!-- 41 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Matarese Circle" data-author="Robert Ludlum" data-summary="Two Cold War enemies — an American and a Soviet agent — must cooperate to stop a secret organization threatening world order." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">The Matarese Circle</span></div>
+            <div class="spine-author">Ludlum</div>
+          </div>
+
+          <!-- 42 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Holcroft Covenant" data-author="Robert Ludlum" data-summary="A man discovers his Nazi father left a massive fund for restitution — but dark forces have very different plans for the money." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">The Holcroft Covenant</span></div>
+            <div class="spine-author">Ludlum</div>
+          </div>
+
+          <!-- 43 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Matlock Paper" data-author="Robert Ludlum" data-summary="A Harvard professor is recruited by the Justice Department to infiltrate a criminal syndicate operating across college campuses." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">The Matlock Paper</span></div>
+            <div class="spine-author">Ludlum</div>
+          </div>
+
+          <!-- 44 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Gemini Contenders" data-author="Robert Ludlum" data-summary="A secret document that could destroy Christianity is hidden in the Italian Alps — and two families race across decades to find it." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">The Gemini Contenders</span></div>
+            <div class="spine-author">Ludlum</div>
+          </div>
+
+          <!-- 45 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Witness to Murder" data-author="Franklin W. Dixon" data-summary="The Hardy Boys witness a crime that draws them into a dangerous murder investigation with no easy way out." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">Witness to Murder</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 46 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Evil Incorporated" data-author="Franklin W. Dixon" data-summary="Frank and Joe Hardy uncover a criminal organization brilliantly disguised as a legitimate business." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">Evil Incorporated</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 47 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Mummy Case" data-author="Franklin W. Dixon" data-summary="The Hardy Boys are drawn into a dangerous case involving stolen Egyptian artifacts and an ancient mummy&apos;s curse." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">The Mummy Case</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 48 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Aryan's Secret" data-author="Franklin W. Dixon" data-summary="Frank and Joe investigate stolen archaeological secrets tied to a dangerous underground network with historical roots." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">The Aryan&apos;s Secret</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 49 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Wailing Siren Mystery" data-author="Franklin W. Dixon" data-summary="The Hardy Boys follow the trail of a mysterious radio signal that leads them straight into a criminal conspiracy." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">The Wailing Siren Mystery</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 50 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Motocross Madness" data-author="Franklin W. Dixon" data-summary="Frank and Joe get caught up in sabotage and danger on the motocross racing circuit." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Motocross Madness</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 51 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Secret of the Soldiers' Gold" data-author="Franklin W. Dixon" data-summary="The Hardy Boys race to find hidden wartime treasure before dangerous criminals beat them to it." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">The Secret of the Soldiers&apos; Gold</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 52 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Double Jeopardy" data-author="Franklin W. Dixon" data-summary="Frank and Joe Hardy face double danger as they chase criminals through two intertwined mysteries." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">Double Jeopardy</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 53 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="In Plane Sight" data-author="Franklin W. Dixon" data-summary="The Hardy Boys investigate sabotage and deadly danger at a high-profile airshow." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">In Plane Sight</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 54 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Hide-and-Sneak" data-author="Franklin W. Dixon" data-summary="Frank and Joe go undercover to catch skilled thieves hiding in plain sight." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">Hide-and-Sneak</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 55 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Training for Trouble" data-author="Franklin W. Dixon" data-summary="The Hardy Boys uncover a dangerous conspiracy at a martial arts training camp." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">Training for Trouble</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 56 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="Trapped at Sea" data-author="Franklin W. Dixon" data-summary="Frank and Joe face life-threatening danger when criminals trap them on the open water." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">Trapped at Sea</span></div>
+            <div class="spine-author">Dixon</div>
+          </div>
+
+          <!-- 57 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Doomsday Conspiracy" data-author="Sidney Sheldon" data-summary="A naval officer sent to find witnesses to a UFO crash discovers the truth is far more dangerous than any conspiracy theory." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">The Doomsday Conspiracy</span></div>
+            <div class="spine-author">Sheldon</div>
+          </div>
+
+          <!-- 58 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Sands of Time" data-author="Sidney Sheldon" data-summary="Four nuns flee a brutal civil war in Spain — and the lives of the soldiers who protect them are transformed forever." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">The Sands of Time</span></div>
+            <div class="spine-author">Sheldon</div>
+          </div>
+
+          <!-- 59 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Sky is Falling" data-author="Sidney Sheldon" data-summary="A journalist uncovers a pattern of deaths that seems impossible — and learns that the truth is worth dying for." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">The Sky is Falling</span></div>
+            <div class="spine-author">Sheldon</div>
+          </div>
+
+          <!-- 60 -->
+          <div class="spine-card" data-category="Mystery &amp; Thriller" data-best="false" data-title="The Naked Face" data-author="Sidney Sheldon" data-summary="A psychoanalyst becomes the prime suspect in a murder and must find the real killer before the police find him." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">The Naked Face</span></div>
+            <div class="spine-author">Sheldon</div>
+          </div>
+
+          <!-- 61 · Romance & Contemporary Fiction -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="Five Point Someone" data-author="Chetan Bhagat" data-summary="Three students at IIT struggle to survive brutal academic pressure — a raw and funny portrait of India&apos;s engineering culture." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">Five Point Someone</span></div>
+            <div class="spine-author">Bhagat</div>
+          </div>
+
+          <!-- 62 -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="One Night @ the Call Center" data-author="Chetan Bhagat" data-summary="Six call center colleagues receive a life-changing phone call from God during one chaotic and unforgettable night shift." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">One Night @ the Call Center</span></div>
+            <div class="spine-author">Bhagat</div>
+          </div>
+
+          <!-- 63 -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="The 3 Mistakes of My Life" data-author="Chetan Bhagat" data-summary="Three friends chase their dreams in Gujarat — business, cricket, and love — until one catastrophic decision changes everything." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">The 3 Mistakes of My Life</span></div>
+            <div class="spine-author">Bhagat</div>
+          </div>
+
+          <!-- 64 -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="2 States" data-author="Chetan Bhagat" data-summary="Two people from different Indian states fall in love and must navigate very different families, cultures, and expectations to get married." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">2 States</span></div>
+            <div class="spine-author">Bhagat</div>
+          </div>
+
+          <!-- 65 -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="Our Impossible Love" data-author="Durjoy Datta" data-summary="An honest portrait of two people who seem perfect together but cannot make it work — a story about the real complexity of heartbreak." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Our Impossible Love</span></div>
+            <div class="spine-author">Datta</div>
+          </div>
+
+          <!-- 66 -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="The Olive Season" data-author="Carol Drinkwater" data-summary="A woman&apos;s journey tending olive groves in the south of France — a memoir of land, seasons, and the slow discovery of a new life." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">The Olive Season</span></div>
+            <div class="spine-author">Drinkwater</div>
+          </div>
+
+          <!-- 67 -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="Nights in Rodanthe" data-author="Nicholas Sparks" data-summary="Two people at a crossroads meet at a remote inn during a storm and find unexpected, transformative connection — classic Sparks." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Nights in Rodanthe</span></div>
+            <div class="spine-author">Sparks</div>
+          </div>
+
+          <!-- 68 -->
+          <div class="spine-card" data-category="Romance &amp; Contemporary Fiction" data-best="false" data-title="The Black Stallion" data-author="Walter Farley" data-summary="A shipwrecked boy and a wild Arabian stallion form an extraordinary bond on a deserted island — a timeless story of trust and partnership." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">The Black Stallion</span></div>
+            <div class="spine-author">Farley</div>
+          </div>
+
+          <!-- 69 · Marketing & Sales -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="false" data-title="All Marketers Tell Stories" data-author="Seth Godin" data-summary="Godin&apos;s argument that marketing is fundamentally about stories — and whether they align with the worldview of the people you&apos;re trying to reach." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">All Marketers Tell Stories</span></div>
+            <div class="spine-author">Godin</div>
+          </div>
+
+          <!-- 70 -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="false" data-title="This Is Marketing" data-author="Seth Godin" data-summary="Godin&apos;s manifesto for ethical, human-centred marketing — change the people who want to be changed, not everyone." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">This Is Marketing</span></div>
+            <div class="spine-author">Godin</div>
+          </div>
+
+          <!-- 71 ★ -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="true" data-title="Pitch Anything" data-author="Oren Klaff" data-summary="Oren Klaff&apos;s STRONG framework for framing pitches is the most practically useful sales book I&apos;ve read. Everything else about pitching is downstream of how you frame the frame." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="best-star">★</span><span class="spine-title">Pitch Anything</span></div>
+            <div class="spine-author">Klaff</div>
+          </div>
+
+          <!-- 72 -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="false" data-title="The Science of Storytelling" data-author="Will Storr" data-summary="How the brain processes stories — and how writers and communicators can use psychological principles to make narratives irresistible." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">The Science of Storytelling</span></div>
+            <div class="spine-author">Storr</div>
+          </div>
+
+          <!-- 73 -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="false" data-title="Made to Stick" data-author="Chip &amp; Dan Heath" data-summary="Why some ideas survive and others die — the six principles that make concepts memorable, shareable, and actionable." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Made to Stick</span></div>
+            <div class="spine-author">Heath</div>
+          </div>
+
+          <!-- 74 -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="false" data-title="Building a StoryBrand" data-author="Donald Miller" data-summary="Donald Miller&apos;s framework for clarifying your brand message so customers can actually understand why they should care." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Building a StoryBrand</span></div>
+            <div class="spine-author">Miller</div>
+          </div>
+
+          <!-- 75 ★ -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="true" data-title="Positioning: The Battle for Your Mind" data-author="Ries &amp; Trout" data-summary="Ries and Trout wrote the foundational text of marketing strategy in 1981. Still the most useful 100 pages you can read before building a category or launching a product." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="best-star">★</span><span class="spine-title">Positioning: The Battle for Your Mind</span></div>
+            <div class="spine-author">Ries &amp; Trout</div>
+          </div>
+
+          <!-- 76 ★ -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="true" data-title="The Psychology of Selling" data-author="Brian Tracy" data-summary="Brian Tracy on the internal game of selling — belief, mindset, and the mechanics of persuasion. The title is dry; the content is not." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="best-star">★</span><span class="spine-title">The Psychology of Selling</span></div>
+            <div class="spine-author">Tracy</div>
+          </div>
+
+          <!-- 77 -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="false" data-title="Blink" data-author="Malcolm Gladwell" data-summary="Gladwell on the power of rapid cognition — why split-second decisions can be as accurate as deliberate analysis, and when they can&apos;t." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">Blink</span></div>
+            <div class="spine-author">Gladwell</div>
+          </div>
+
+          <!-- 78 -->
+          <div class="spine-card" data-category="Marketing &amp; Sales" data-best="false" data-title="$100 Million Offers" data-author="Alex Hormozi" data-summary="Hormozi&apos;s step-by-step system for creating irresistible offers that make price objections largely irrelevant." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">$100 Million Offers</span></div>
+            <div class="spine-author">Hormozi</div>
+          </div>
+
+          <!-- 79 · Startups & Business -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Competing for the Future" data-author="Hamel &amp; Prahalad" data-summary="Hamel and Prahalad argue that companies must compete for the future today — not just optimize their current position." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">Competing for the Future</span></div>
+            <div class="spine-author">Hamel &amp; Prahalad</div>
+          </div>
+
+          <!-- 80 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Zero to One" data-author="Peter Thiel" data-summary="Thiel&apos;s contrarian thesis — true innovation creates something entirely new, not a better version of what already exists." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">Zero to One</span></div>
+            <div class="spine-author">Thiel</div>
+          </div>
+
+          <!-- 81 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Play Bigger" data-author="Ramadan, Peterson, Lochhead &amp; Maney" data-summary="How legendary companies create and dominate entirely new market categories rather than competing in existing ones." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Play Bigger</span></div>
+            <div class="spine-author">Lochhead et al</div>
+          </div>
+
+          <!-- 82 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="The Hard Thing About Hard Things" data-author="Ben Horowitz" data-summary="Horowitz offers brutal, practical wisdom on leading a company through the hardest moments — layoffs, missed revenue, and decisions that have no good option." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="best-star">★</span><span class="spine-title">The Hard Thing About Hard Things</span></div>
+            <div class="spine-author">Horowitz</div>
+          </div>
+
+          <!-- 83 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Rework" data-author="Jason Fried &amp; DHH" data-summary="A manifesto against conventional business wisdom — how to build a successful company by ignoring most of the advice you&apos;ve been given." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Rework</span></div>
+            <div class="spine-author">Fried &amp; DHH</div>
+          </div>
+
+          <!-- 84 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Remote" data-author="Jason Fried &amp; DHH" data-summary="Fried and DHH make the comprehensive case for remote work — years before the pandemic proved them definitively right." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">Remote</span></div>
+            <div class="spine-author">Fried &amp; DHH</div>
+          </div>
+
+          <!-- 85 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="Hooked" data-author="Nir Eyal" data-summary="Nir Eyal&apos;s model for how products build habits. Essential for any product or marketing person. The trigger–action–reward–investment loop explains more consumer behaviour than years of market research." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="best-star">★</span><span class="spine-title">Hooked</span></div>
+            <div class="spine-author">Eyal</div>
+          </div>
+
+          <!-- 86 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="Radical Candor" data-author="Kim Scott" data-summary="Kim Scott on the manager&apos;s hardest problem: how to care enough about people to tell them the truth. The 2x2 of ruinous empathy vs radical candour is one of the most useful frameworks in management." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="best-star">★</span><span class="spine-title">Radical Candor</span></div>
+            <div class="spine-author">Scott</div>
+          </div>
+
+          <!-- 87 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="The Rational Optimist" data-author="Matt Ridley" data-summary="Ridley&apos;s sweeping argument that human prosperity and innovation are on an irreversible upward trajectory — and why pessimism is usually wrong." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">The Rational Optimist</span></div>
+            <div class="spine-author">Ridley</div>
+          </div>
+
+          <!-- 88 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="The Psychology of Money" data-author="Morgan Housel" data-summary="Morgan Housel on why smart people make terrible financial decisions. The best book on the intersection of behaviour, wealth, and time that isn&apos;t actually a finance book." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="best-star">★</span><span class="spine-title">The Psychology of Money</span></div>
+            <div class="spine-author">Housel</div>
+          </div>
+
+          <!-- 89 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="The Tipping Point" data-author="Malcolm Gladwell" data-summary="Gladwell on how ideas, products, and behaviours reach critical mass. The connector/maven/salesman framework is 25 years old and still how I think about distribution." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="best-star">★</span><span class="spine-title">The Tipping Point</span></div>
+            <div class="spine-author">Gladwell</div>
+          </div>
+
+          <!-- 90 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Only the Paranoid Survive" data-author="Andy Grove" data-summary="Andy Grove on how to navigate the strategic inflection points that can destroy companies — or transform them into something entirely new." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Only the Paranoid Survive</span></div>
+            <div class="spine-author">Grove</div>
+          </div>
+
+          <!-- 91 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="Freakonomics" data-author="Levitt &amp; Dubner" data-summary="What happens when an economist looks at everything nobody else thought to measure. Changed how I think about incentives, causation, and data." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="best-star">★</span><span class="spine-title">Freakonomics</span></div>
+            <div class="spine-author">Levitt &amp; Dubner</div>
+          </div>
+
+          <!-- 92 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Jugaad Innovation" data-author="Radjou, Prabhu &amp; Ahuja" data-summary="How the Indian model of frugal, flexible, and inclusive innovation can teach the world to do more with less." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">Jugaad Innovation</span></div>
+            <div class="spine-author">Radjou et al</div>
+          </div>
+
+          <!-- 93 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="The Little Book of Indian Business" data-author="Finshots" data-summary="Finshots&apos; concise collection of stories, patterns, and insights behind the companies and moments shaping Indian business." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">The Little Book of Indian Business</span></div>
+            <div class="spine-author">Finshots</div>
+          </div>
+
+          <!-- 94 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Made in Japan" data-author="Akio Morita" data-summary="Sony co-founder Akio Morita&apos;s memoir — the story of building one of the world&apos;s most iconic consumer electronics companies from postwar rubble." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">Made in Japan</span></div>
+            <div class="spine-author">Morita</div>
+          </div>
+
+          <!-- 95 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="The Almanack of Naval Ravikant" data-author="Eric Jorgenson" data-summary="The distilled philosophy of one of the sharpest minds in tech — on wealth, happiness, and the compounding of knowledge. Reread-worthy." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="best-star">★</span><span class="spine-title">The Almanack of Naval Ravikant</span></div>
+            <div class="spine-author">Jorgenson</div>
+          </div>
+
+          <!-- 96 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Skin in the Game" data-author="Nassim Nicholas Taleb" data-summary="Taleb on the hidden asymmetries in everyday life — why people who bear no risk consistently make the worst decisions." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">Skin in the Game</span></div>
+            <div class="spine-author">Taleb</div>
+          </div>
+
+          <!-- 97 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Charter of the United Nations" data-author="United Nations" data-summary="The foundational document of the international rules-based order — the framework for global cooperation that every nation has signed." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Charter of the United Nations</span></div>
+            <div class="spine-author">UN</div>
+          </div>
+
+          <!-- 98 ★ -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="true" data-title="Homo Sapiens" data-author="Yuval Noah Harari" data-summary="Harari&apos;s account of how Homo Sapiens conquered the world through shared myths and collective fiction. Made me rethink category creation, brand narrative, and what &apos;belief&apos; actually does." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="best-star">★</span><span class="spine-title">Homo Sapiens</span></div>
+            <div class="spine-author">Harari</div>
+          </div>
+
+          <!-- 99 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Homo Deus" data-author="Yuval Noah Harari" data-summary="Harari turns his lens on the future — what do humans want next, now that we&apos;ve largely conquered hunger, disease, and war?" onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Homo Deus</span></div>
+            <div class="spine-author">Harari</div>
+          </div>
+
+          <!-- 100 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="Nexus" data-author="Yuval Noah Harari" data-summary="Harari examines the information networks that have shaped human history — and what the latest network, AI, will do to us next." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">Nexus</span></div>
+            <div class="spine-author">Harari</div>
+          </div>
+
+          <!-- 101 -->
+          <div class="spine-card" data-category="Startups &amp; Business" data-best="false" data-title="21 Lessons for the 21st Century" data-author="Yuval Noah Harari" data-summary="Harari on the most pressing questions of today — from AI and employment to terrorism, nationalism, and the search for meaning." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="spine-title">21 Lessons for the 21st Century</span></div>
+            <div class="spine-author">Harari</div>
+          </div>
+
+          <!-- 102 · Psychology & Self-Help -->
+          <div class="spine-card" data-category="Psychology &amp; Self-Help" data-best="false" data-title="Atomic Habits" data-author="James Clear" data-summary="James Clear&apos;s practical system for building good habits and breaking bad ones through tiny, consistent changes that compound over time." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">Atomic Habits</span></div>
+            <div class="spine-author">Clear</div>
+          </div>
+
+          <!-- 103 -->
+          <div class="spine-card" data-category="Psychology &amp; Self-Help" data-best="false" data-title="The Subtle Art of Not Giving a F*ck" data-author="Mark Manson" data-summary="Manson&apos;s counter-intuitive guide to living well — choose your struggles wisely, because what you&apos;re willing to suffer for defines you." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">The Subtle Art of Not Giving a F*ck</span></div>
+            <div class="spine-author">Manson</div>
+          </div>
+
+          <!-- 104 ★ -->
+          <div class="spine-card" data-category="Psychology &amp; Self-Help" data-best="true" data-title="Psychology in Bite-Sized Chunks" data-author="Joel Levy" data-summary="Exactly what it says — 50+ psychology concepts explained clearly and concisely. A reference book I actually use." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="best-star">★</span><span class="spine-title">Psychology in Bite-Sized Chunks</span></div>
+            <div class="spine-author">Levy</div>
+          </div>
+
+          <!-- 105 -->
+          <div class="spine-card" data-category="Psychology &amp; Self-Help" data-best="false" data-title="Men are from Mars, Women are from Venus" data-author="John Gray" data-summary="Gray&apos;s classic on the fundamental communication differences between men and women — and how understanding them transforms relationships." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Men are from Mars, Women are from Venus</span></div>
+            <div class="spine-author">Gray</div>
+          </div>
+
+          <!-- 106 -->
+          <div class="spine-card" data-category="Psychology &amp; Self-Help" data-best="false" data-title="How to Win Friends and Influence People" data-author="Dale Carnegie" data-summary="Carnegie&apos;s timeless guide to human relations — the most widely read self-help book ever written, and still one of the most practical." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">How to Win Friends and Influence People</span></div>
+            <div class="spine-author">Carnegie</div>
+          </div>
+
+          <!-- 107 -->
+          <div class="spine-card" data-category="Psychology &amp; Self-Help" data-best="false" data-title="Develop Self-Confidence, Improve Public Speaking" data-author="Dale Carnegie" data-summary="Carnegie&apos;s practical guide to building confidence and becoming a compelling, persuasive public speaker." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Develop Self-Confidence, Improve Public Speaking</span></div>
+            <div class="spine-author">Carnegie</div>
+          </div>
+
+          <!-- 108 -->
+          <div class="spine-card" data-category="Psychology &amp; Self-Help" data-best="false" data-title="21 Days of Effective Communication" data-author="Ian Tuhovsky" data-summary="A practical programme for transforming your communication skills through daily exercises — straightforward and immediately applicable." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">21 Days of Effective Communication</span></div>
+            <div class="spine-author">Tuhovsky</div>
+          </div>
+
+          <!-- 109 ★ · Indian History & Culture -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="true" data-title="An Era of Darkness" data-author="Shashi Tharoor" data-summary="Shashi Tharoor&apos;s systematic demolition of the myth of benevolent British colonialism. One of the most important books for understanding modern India&apos;s economic and cultural starting point." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="best-star">★</span><span class="spine-title">An Era of Darkness</span></div>
+            <div class="spine-author">Tharoor</div>
+          </div>
+
+          <!-- 110 -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="false" data-title="Arthashastra" data-author="Kautilya" data-summary="Kautilya&apos;s ancient Indian treatise on statecraft, economic policy, and military strategy — a 2,300-year-old manual on power that reads as relevant today as ever." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">Arthashastra</span></div>
+            <div class="spine-author">Kautilya</div>
+          </div>
+
+          <!-- 111 -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="false" data-title="A Princess Remembers" data-author="Gayatri Devi" data-summary="The memoirs of Gayatri Devi, Maharani of Jaipur — a remarkable life lived at the intersection of royalty, politics, and the birth of modern India." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="spine-title">A Princess Remembers</span></div>
+            <div class="spine-author">Devi</div>
+          </div>
+
+          <!-- 112 ★ -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="true" data-title="Bhagavad Gita" data-author="Vyasa" data-summary="The clearest articulation of duty, equanimity, and action I&apos;ve found in any text across any tradition. Read it as philosophy, not religion." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="best-star">★</span><span class="spine-title">Bhagavad Gita</span></div>
+            <div class="spine-author">Vyasa</div>
+          </div>
+
+          <!-- 113 -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="false" data-title="Mahabharata" data-author="Vyasa" data-summary="The world&apos;s longest epic — a sweeping story of war, duty, and dharma that contains within it one of the greatest philosophical texts ever written." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Mahabharata</span></div>
+            <div class="spine-author">Vyasa</div>
+          </div>
+
+          <!-- 114 -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="false" data-title="Mahagata: Hundred Tales of Puranas" data-author="Various" data-summary="A hundred stories drawn from the ancient Puranas — mythology, morality, and the divine rendered in accessible and vivid narrative." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Mahagata: Hundred Tales of Puranas</span></div>
+            <div class="spine-author">Various</div>
+          </div>
+
+          <!-- 115 -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="false" data-title="Rumi's Little Book of Love and Laughter" data-author="Rumi" data-summary="A selection of Rumi&apos;s poetry on love, longing, and the search for the divine — timeless, luminous, and impossible to read without feeling something." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1218"><span class="spine-title">Rumi&apos;s Little Book of Love and Laughter</span></div>
+            <div class="spine-author">Rumi</div>
+          </div>
+
+          <!-- 116 -->
+          <div class="spine-card" data-category="Indian History &amp; Culture" data-best="false" data-title="Autobiography of a Yogi" data-author="Paramahansa Yogananda" data-summary="Yogananda&apos;s extraordinary life story — an introduction to the science of yoga and the masters of India&apos;s spiritual tradition that has captivated millions worldwide." onclick="openBook(this)">
+            <div class="spine-body" style="background:#101818"><span class="spine-title">Autobiography of a Yogi</span></div>
+            <div class="spine-author">Yogananda</div>
+          </div>
+
+          <!-- 117 ★ · Science -->
+          <div class="spine-card" data-category="Science" data-best="true" data-title="A Brief History of Time" data-author="Stephen Hawking" data-summary="Hawking made the universe accessible without dumbing it down. The fact that a book about black holes and the arrow of time became a global bestseller is itself the most interesting thing about it." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1818"><span class="best-star">★</span><span class="spine-title">A Brief History of Time</span></div>
+            <div class="spine-author">Hawking</div>
+          </div>
+
+          <!-- 118 -->
+          <div class="spine-card" data-category="Science" data-best="false" data-title="Relativity" data-author="Albert Einstein" data-summary="Einstein&apos;s own accessible explanation of special and general relativity — written for readers without advanced mathematics, by the man who discovered it." onclick="openBook(this)">
+            <div class="spine-body" style="background:#181618"><span class="spine-title">Relativity</span></div>
+            <div class="spine-author">Einstein</div>
+          </div>
+
+          <!-- 119 ★ -->
+          <div class="spine-card" data-category="Science" data-best="true" data-title="Six Easy Pieces" data-author="Richard Feynman" data-summary="Feynman&apos;s gift was making physics feel like the most natural way to think about anything. These six lectures are the best introduction to how a rigorous mind operates." onclick="openBook(this)">
+            <div class="spine-body" style="background:#14101a"><span class="best-star">★</span><span class="spine-title">Six Easy Pieces</span></div>
+            <div class="spine-author">Feynman</div>
+          </div>
+
+          <!-- 120 -->
+          <div class="spine-card" data-category="Science" data-best="false" data-title="Discrete Mathematics" data-author="Lipschutz &amp; Lipson" data-summary="The mathematical foundations of computer science — logic, sets, graphs, and combinatorics explained with clarity and precision." onclick="openBook(this)">
+            <div class="spine-body" style="background:#161622"><span class="spine-title">Discrete Mathematics</span></div>
+            <div class="spine-author">Lipschutz</div>
+          </div>
+
+          <!-- 121 -->
+          <div class="spine-card" data-category="Science" data-best="false" data-title="Data Mining for Business Intelligence" data-author="Various" data-summary="A practical guide to extracting actionable insight from data using statistical and machine learning techniques for business decision-making." onclick="openBook(this)">
+            <div class="spine-body" style="background:#1a1610"><span class="spine-title">Data Mining for Business Intelligence</span></div>
+            <div class="spine-author">Various</div>
+          </div>
+
+          <!-- 122 -->
+          <div class="spine-card" data-category="Science" data-best="false" data-title="Investment Analysis and Portfolio Management" data-author="Various" data-summary="A comprehensive guide to evaluating securities and constructing investment portfolios — the academic foundation of modern investment practice." onclick="openBook(this)">
+            <div class="spine-body" style="background:#121a12"><span class="spine-title">Investment Analysis and Portfolio Management</span></div>
+            <div class="spine-author">Various</div>
+          </div>
+
+        </div><!-- /spine-grid -->
+
+        <!-- Navigation chips -->
+        <div class="chip-row">
+          <div class="chip" data-goto="gtm">My GTM + AI thinking →</div>
+        </div>
+
+      </div><!-- /tab-library -->
+
     </div><!-- /chat-area -->
 
-    <!-- Decorative input bar — non-functional by design -->
-    <div class="input-bar">
-      <div class="input-wrap">
-        <div class="input-placeholder">Ask me anything — career, GTM, AI, what I'm building next...</div>
-        <div class="input-actions">
-          <div class="input-hint">↵ return</div>
-          <div class="send-btn">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                 stroke-linecap="round" stroke-linejoin="round" style="color: var(--text3);">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </div>
+    <!-- Book detail modal overlay -->
+    <div id="book-overlay" style="display:none;">
+      <div class="book-modal">
+        <button class="modal-close" onclick="closeBook()">✕</button>
+        <div class="modal-cover">
+          <img id="modal-img" src="" alt="" style="display:none;" />
+          <div id="modal-fallback" class="modal-cover-fallback" style="display:none;"></div>
+        </div>
+        <div class="modal-info">
+          <div class="modal-title" id="modal-title"></div>
+          <div class="modal-author" id="modal-author"></div>
+          <div class="modal-badges" id="modal-badges"></div>
+          <div class="modal-summary" id="modal-summary"></div>
         </div>
       </div>
     </div>
+
 
   </div><!-- /main -->
 
 </div><!-- /shell -->
 
 <script src="js/app.js"></script>
+<script>
+(function() {
+  var loader = document.getElementById('nd-loader');
+  if (sessionStorage.getItem('ndLoaderPlayed')) {
+    loader.style.display = 'none';
+    return;
+  }
+  sessionStorage.setItem('ndLoaderPlayed', 'true');
+  setTimeout(function() {
+    loader.style.transition = 'opacity 0.3s ease';
+    loader.style.opacity = '0';
+    setTimeout(function() {
+      loader.style.display = 'none';
+    }, 300);
+  }, 1700);
+})();
+</script>
 </body>
 </html>

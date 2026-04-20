@@ -360,6 +360,228 @@
   line-height: 1.75;
 }
 
+/* ── Library: Filter row & pills ── */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.filter-pill {
+  font-size: 13px;
+  padding: 7px 15px;
+  border-radius: 99px;
+  border: 0.5px solid var(--border2);
+  color: var(--text2);
+  background: var(--bg2);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  font-family: var(--font-sans);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.filter-pill:hover {
+  border-color: var(--accent2);
+  color: var(--text);
+}
+
+.filter-pill.active {
+  background: #1a1a2a;
+  color: #c9a96e;
+  border-color: #8b6f42;
+}
+
+/* ── Library: Spine grid ── */
+.spine-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* ── Library: Spine card ── */
+.spine-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0.5px solid rgba(255,255,255,0.07);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  aspect-ratio: 2 / 3;
+}
+
+.spine-card:hover {
+  border-color: rgba(201,169,110,0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* Cover image loaded on spine card */
+.spine-card.cover-loaded .spine-body {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+.spine-card.cover-loaded .spine-title {
+  display: none;
+}
+
+.spine-card.cover-loaded .best-star {
+  background: rgba(0,0,0,0.55);
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-size: 11px;
+}
+
+.spine-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 8px 4px;
+  min-height: 0;
+}
+
+.spine-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 11px;
+  font-family: var(--font-sans);
+  color: rgba(232,230,224,0.85);
+  line-height: 1.2;
+  max-height: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.best-star {
+  position: absolute;
+  top: 7px;
+  right: 6px;
+  font-size: 11px;
+  color: #c9a030;
+  line-height: 1;
+}
+
+.spine-author {
+  height: 24px;
+  flex-shrink: 0;
+  background: rgba(0,0,0,0.35);
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: #666360;
+  padding: 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Library: Book modal ── */
+#book-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-modal {
+  background: #111111;
+  border: 0.5px solid rgba(255,255,255,0.13);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  max-width: 520px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-cover {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.modal-cover img {
+  width: 120px;
+  border-radius: 4px;
+  border: 0.5px solid rgba(255,255,255,0.1);
+  display: block;
+}
+
+.modal-cover-fallback {
+  width: 120px;
+  min-height: 180px;
+  background: var(--bg3);
+  border-radius: 4px;
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--accent2);
+  line-height: 1.4;
+}
+
+.modal-info { flex: 1; }
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 500;
+  color: #e8e6e0;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.modal-author {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: #888580;
+  margin-bottom: 12px;
+}
+
+.modal-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.modal-summary {
+  font-size: 14px;
+  color: #888580;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #555250;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close:hover { color: #e8e6e0; }
+
 /* ── Thesis items inside "The thesis is set" card ── */
 .thesis-item {
   display: flex;
